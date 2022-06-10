@@ -1,0 +1,255 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>NENU</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		background-image: url("../images/背景.png");
+		background-size: cover;
+	}
+	#one{
+        margin-top: 30px;
+		width: 1000px;
+		height: 300px;
+		float: left;
+        text-align: center;
+	}
+	img:hover{
+		transform: scale(1.4);
+        transition-duration: 0.4s;
+	}
+	pre{
+        text-align: center;
+        font: bold 60px helvetica, arial, sans-serif;
+        color:aqua;
+		font-size: 24px;
+	}
+    button{
+        border-radius: 8px;
+        background-color: green;
+        text-align: center;
+        text-decoration: none;
+        font-size: 24px;
+        border: 2px solid blue;
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+    }
+    button:hover{
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>
+<style>
+		
+		* {
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .box,.box li,.box img {
+            width: 600px;
+            height: 300px;
+        }
+        .box {
+            margin: 100px;
+			margin-left: 300px;
+            position: relative;
+            overflow: hidden;
+			text-align: center;
+        }
+        .box .slider {
+            width: 700%;
+            position: absolute;
+            top: 0;
+        }
+        .box ul li {
+            float: left;
+        }
+        .circle {
+            position: absolute;
+            height: 20px;
+            left: 280px;
+            bottom: 10px;
+        }
+        .circle li{
+            width: 16px;
+            height: 16px;
+            background-color: #fff;
+            border-radius: 8px;
+            line-height: 16px;
+            text-align: center;
+            margin-left: 5px;
+            cursor: pointer;
+            float: left;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 30px;
+            background: rgba(0,0,0,.5);
+            color: #fff;
+            font-size: 24px;
+            text-align: center;
+            line-height: 30px;
+            display: none;
+        }
+        .arrow:hover {
+            background: rgba(0,0,0,.3);
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .circle .current {
+            background-color: red;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<script src="../樱花.js"></script>
+<hr color="#5B50FE"/>
+	<div class="box">
+        <ul id="slider" class="slider" style="left:-600px;">
+            <li><img src="../images/夜景图.png"></li>
+            <li><img src="../images/树.png"></li>
+            <li><img src="../images/夜晚.png"></li>
+            <li><img src="../images/love.png"></li>
+			<li><img src="../images/一角.png"></li>
+			<li><img src="../images/剪影.png"></li>
+			<li><img src="../images/东师.png"></li>
+        </ul>
+        <ol id="circle" class="circle">
+            <li class="current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+        <a href="javascript:;" id="prev" class="arrow prev">&lt;</a>
+        <a href="javascript:;" id="next" class="arrow next">&gt;</a>
+    </div>
+	<hr>
+    <hr>
+    <div id="one">
+	<pre>
+     东北师范大学净月校区拥有全日制本科生7200人,博士、硕士研究生人,专
+任教师500余人并设有政法学院、商学院、经济学院、传媒科学学院、计算机学
+院软件学院、音乐学院、美术学院、外语学院电子商务系 远程与继续教育学院、
+中国赴日本国留学生预备学校以及辐射技术研究所和环境学院等13个院 ( 系 )
+和科研单位。其专业设置以非师范专业为主,涵盖了哲学、经济学、法学、文学、
+理学工学、管理学、环境学等8大学科门类。学校对校区实行“统一领导,双重领
+导校区为主” 的管理模式和运行机制。为推进净月校区的发展和建设,由一名副
+校长分管校区的全面工作,并设置了学校党委的派出机构—— 净月校区党工委,设
+置了净月校区办公室、净月校区教学与学科建设办公室、净月校区学生与保卫工
+作办公室3个行政机构。
+	</pre>
+	<a href="../代码/index.html">
+        <button>返回首页</button>
+    </a>
+</div>
+</body>
+<script>
+    var slider = document.getElementById("slider");
+    var box = slider.parentNode;
+    var circle = document.getElementById("circle");
+    var prev = document.getElementById("prev");
+    var next = document.getElementById("next");
+    var lis = circle.children;
+    var iNow = 1;
+    var timerTwo = null;
+    function animate(obj,offset){
+        clearInterval(obj.timer);
+        var timer = null;
+        var move = 15;
+        var speed = offset/move;
+        var target = slider.offsetLeft + offset;
+        var value = 0;
+        obj.timer = setInterval(function(){
+            slider.style.left = slider.offsetLeft + speed + "px";
+            value = target - slider.offsetLeft;
+            if(Math.abs(value) < Math.abs(speed)){
+                slider.style.left = slider.offsetLeft + value + "px";
+                if(slider.offsetLeft < -3000){
+                    slider.style.left = -600 + "px";
+                }else if(slider.offsetLeft > -600){
+                    slider.style.left = -3000 + "px";
+                }
+                clearInterval(obj.timer);
+            }
+        },20);
+    }
+    prev.onclick = function(){
+      if(iNow == 1){
+        iNow = 5;
+      }else{
+        iNow--;
+      }
+      showButton(iNow);
+      animate(slider,600);
+ 
+    }
+    next.onclick = function(){
+      if(iNow == 5){
+        iNow = 1;
+      }else{
+        iNow++;
+      }
+      showButton(iNow);
+      animate(slider,-600);
+ 
+ 
+}
+    for(var i=0;i<lis.length;i++){
+      lis[i].index = i+1;
+      lis[i].onclick = function(){
+        if(this.className == "current"){
+          return;
+        }
+        var offset = (iNow - this.index)*600;
+        animate(slider,offset);
+        iNow = this.index;
+        showButton(iNow);
+      }
+    }
+    function showButton(index){
+      for(var j=0;j<lis.length;j++){
+        lis[j].className = "";
+      }
+      lis[index-1].className = "current";
+    }
+box.onmouseover = function(){
+    prev.style.display = "block";
+    next.style.display = "block";
+    stopPlay();
+}
+box.onmouseout = function(){
+    prev.style.display = "none";
+    next.style.display = "none";
+    autoPlay();
+}
+function autoPlay(){
+    timerTwo = setInterval(function(){
+        next.onclick();
+    },3000);
+}
+function stopPlay(){
+    clearInterval(timerTwo);
+}
+autoPlay();
+</script>
+</html>

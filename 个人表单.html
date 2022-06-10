@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>登录页面</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		
+	}
+	body{
+		background-image: url("../images/背景2.png");
+	}
+	div{
+		text-align: center;
+	}
+	h2{
+		margin-top: 50px;
+		margin-bottom: 30px;
+	}
+	.form-group{
+		margin-top: 20px;
+	}
+	#feedbackSubmit{
+		margin-top: 40px;
+		font-size: 24px;		
+	}
+	#feedbackSubmit:hover{
+        background-color: #4CAF50;
+        color: white;
+	}
+	 button{
+        border-radius: 8px;
+        background-color: green;
+        text-align: center;
+        text-decoration: none;
+        font-size: 24px;
+        border: 2px solid blue;
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+    }
+    button:hover{
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>
+</head>
+
+<body>
+	<script src="../樱花.js"></script>
+	<div class="container">
+      <div class="row">
+        <div class="col-12 col-md-8 mx-auto">
+          <div class="jumbotron">
+            <div class="row text-center">
+              <div class="text-center col-12">
+                <h2>个人信息填写</h2>
+              </div>
+				<hr>
+				<hr>
+              <div class="text-center col-12">
+                <form id="feedbackForm" class="text-center">
+                  <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" aria-describedby="nameHelp">
+                    <span id="nameHelp" class="form-text text-muted" style="display: none;">Please enter your name.</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">E-Mail:</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" aria-describedby="emailHelp">
+                    <span id="emailHelp" class="form-text text-muted" style="display: none;">Please enter a valid e-mail address.</span>
+                  </div>
+				  <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" aria-describedby="passwordHelp">
+                    <span id="passwordHelp" class="form-text text-muted" style="display: none;">Please enter yourpassword.</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="message">Message</label>
+					 <hr>
+                    <textarea rows="20" cols="100" class="form-control" id="message" name="message" placeholder="Message" aria-describedby="messageHelp">可附加个人简介（可不填）：</textarea>
+                    <span id="messageHelp" class="form-text text-muted" style="display: none;">Please enter a message.
+					 </span>
+                  </div>
+                  <button type="submit" id="feedbackSubmit" class="btn btn-primary btn-lg"> Send</button>
+                </form>
+				 <br>
+				<a href="../代码/index.html">
+      			 	 <button>返回首页</button>
+   				</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

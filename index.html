@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>校园风光</title>
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+	  <style>
+		  *{
+			  margin: 0;
+			  padding: 0;
+		  }
+		  img{
+			  width: 140px;
+			  height: 140px;
+			  border-radius: 50%;
+		  }
+		  img:hover{
+			  transform: scale(1.4)
+		  }
+		  #date{
+			  background: red;
+			  float: right;
+		  }
+		  h1{
+			  font-style: italic;
+			  font-weight: bold;
+			  text-align: center;
+		  }
+		  .nav-item active ,navbar-brand{
+			 margin: 30px auto;
+			width: 600px;
+			height: 350px;
+			padding: 0px;
+			border:1px solid #000;
+		  }
+		  .nav-link, .navbar-brand{
+			 display: block;
+			width: 100px;
+			height: 50px;
+			font-family: Microsoft Yahei;
+			line-height: 50px;
+			background-color:aqua;
+			margin: 0px 0px;
+			color: #fff;
+			text-align: center;
+			text-decoration: none;
+			font-size: 15px;
+		  }
+		  .nav-link:hover{
+			  color: white;
+			  background:green;
+		  }
+		  .navbar-brand:hover{
+			  color: white;
+			  background:green;
+		  }
+	  </style>
+	 
+  </head>
+  <body>
+	 <script src="../樱花.js"></script>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" target="blank" href="https://www.nenu.edu.cn">NENU</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active"> <a class="nav-link" href="../代码/NENU.html">更多 <span class="sr-only">(current)</span></a> </li>
+          <li class="nav-item active"> <a class="nav-link" href="../代码/个人表单.html">登录</a> </li>
+          <li class="nav-item active"> <a class="nav-link " href="../代码/信科简介.html">信科</a> </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+	<div id="date"></div>
+	<script>
+		function day() {
+			var date = new Date();
+			m = date.getMonth() + 1;
+			d = date.getDate();
+			h = date.getHours();
+			min = date.getMinutes();
+			s = date.getSeconds();
+			week = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+			i = date.getDay();
+			document.getElementById("date").innerHTML = date.getFullYear() + "-" + zore(m) + "-" + zore(d) + "\t" + zore(h) + ":" + zore(min) + ":" + zore(s) + "\t" + week[i];
+		};
+		function zore(a) {
+			return a < 10 ? '0' + a : a;
+		};
+		setInterval("day()", 1000);
+	</script>
+    <header>
+      <div class="jumbotron">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h1>东北师范大学净月校区</h1>
+              <p class="text-center">东北师范大学净月校区，位于风景如画的长春净月潭旅游经济开发区，与校本部相距15公里，净月校区的建设拓展了东北师范大学的办学空间，提升了整体办学实力，为实现东北师范大学“国内一流国际知名的研究型综合性师范大学”发展建设目标创造了有利的条件。</p>
+              <p>&nbsp;</p>
+<!--
+              <p class="text-center"><a class="btn btn-primary btn-lg" href="../代码/NENU.html" role="button">了解更多</a> </p>
+			  <p class="text-center"><a class="btn btn-primary btn-lg" href="../代码/信科简介.html" role="button">信科一点</a> </p>		
+-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 mb-4 mt-2 text-center">
+            <h2>校园一角</h2>
+          </div>
+        </div>
+      </div>
+      <div class="container ">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+            <img alt="" src="../images/1.png" >
+            <h3>校训石</h3>
+            <p>勤奋创新，为人师表</p>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+            <img alt=""  src="../images/2.png" >
+            <h3>图书馆</h3>
+            <p>净月校区图书馆建筑面积11000平方米，有阅览座位1739个，2003年2月试开馆，2003年10月16日正式开馆。 净月校区图书馆下设3个部：办公室、借阅部和参考咨询部。</p>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+            <img  alt="" src="../images/时钟楼.png" >
+            <h3>时钟楼</h3>
+            <p>鼓楼是净月教学区的地标性建筑。尖长的塔内直取篮天，纪录着净月教学区的发展变化。</p>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+            <img  alt="" src="../images/4.png" >
+            <h3>黄昏</h3>
+            <p>唯美的画面留给最好的你</p>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+            <img  alt=""  src="../images/5.png" >
+            <h3>田径场</h3>
+            <p>阳光下锻炼身体，自然里快乐成长。</p>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+            <img  alt="" src="../images/玉带河.png" >
+            <h3>玉带河</h3>
+            <p>绿波中你荡漾，冰面上你坚忍。此时的你，如慕丝女神的天籁般抚慰心灵，又如塞壬小姐的歌声般极具诱惑。
+			  </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+           <p class="text-center"><a class="btn btn-primary btn-lg" href="https://www.nenu.edu.cn"  target="_blank" role="button">https://www.nenu.edu.cn</a> </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
